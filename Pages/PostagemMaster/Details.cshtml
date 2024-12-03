@@ -1,0 +1,35 @@
+﻿@page
+@model ProjetoLuzaBlog.Pages.PostagemMaster.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div>
+    <h4>Detalhes da Postagem</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Postagem.DesConteudo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Postagem.DesConteudo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Postagem.DatCadastro)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Postagem.DatCadastro)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Postagem.DatAtualizacao)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Postagem.DatAtualizacao)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Postagem?.CodPostagem">Editar</a> |
+    <a asp-page="./Index">Voltar a minha lista de postagens</a>
+</div>

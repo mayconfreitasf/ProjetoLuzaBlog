@@ -1,0 +1,54 @@
+﻿@page
+@model ProjetoLuzaBlog.Pages.Autenticacao.LoginModel
+@{
+    ViewData["IsLoginPage"] = true;
+    <head>
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    </head>
+    <form method="post">
+        
+
+        <header>
+            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+                <div class="container">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </nav>
+        </header>
+        <div class="page pageLogin">
+            <div class="formLogin">
+                <main role="main" class="pb-3">
+                    <div class="form-group">
+                        <label for="username">Usuário</label>
+                        <input type="text" id="username" name="Username" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Senha</label>
+                        <input type="password" id="password" name="Password" class="form-control" />
+                    </div>
+                    <hr />
+                    <button type="submit" class="btn btn-primary">Login</button>
+                    <hr />
+                    <div class="form-group">
+                        <label>Não tem cadastro?</label>
+                        <a asp-page="Registro">Clique aqui</a>
+                    </div>
+                    <div class="form-group">
+                        <a asp-page="/TemplateBlog">Entre aqui sem login</a>
+                    </div>
+                </main>
+            </div>
+        </div>
+
+    </form>
+
+    @if (Model.LoginError)
+    {
+        <div class="alert alert-danger">Login inválido</div>
+    }
+
+
+}

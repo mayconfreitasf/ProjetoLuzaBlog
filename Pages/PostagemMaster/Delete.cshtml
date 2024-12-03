@@ -1,0 +1,37 @@
+﻿@page
+@model ProjetoLuzaBlog.Pages.PostagemMaster.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h3>Você tem certeza que deseja apagar a postagem?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Postagem.DesConteudo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Postagem.DesConteudo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Postagem.DatCadastro)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Postagem.DatCadastro)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Postagem.DatAtualizacao)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Postagem.DatAtualizacao)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Postagem.CodPostagem" />
+        <input type="submit" value="Apagar" class="btn btn-danger" /> |
+        <a asp-page="./Index">Voltar a minha lista de postagens</a>
+    </form>
+</div>

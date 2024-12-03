@@ -1,0 +1,119 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.pageLogin {
+    height: 90%;
+    margin-top: 5%;
+}
+
+.formLogin {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 7px;
+    padding: 40px;
+    box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.4);
+    gap: 5px
+}
+
+.liPostagens {
+    border-radius: 14px;
+    flex-direction: column;
+    background-color: #fff;
+    margin-bottom: 15px;
+    padding: 5px;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.4);
+}
+
+.liMenu {
+    border-radius: 14px;
+    background-color: #c5dcff;
+    margin: 10px;
+    padding: 5px;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.4);
+}
+
+.usuarioDatePostagem {
+    text-align: right;
+    font-size: 9pt;
+}
+
+.usuarioConteudoPostagem {
+    text-align: left;
+    font-size: 9pt;
+}
+
+.pageCadastro {
+    height: 90%;
+    margin-top: 1%;
+}
+
+
+
+.formLogin input {
+    padding: 15px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    border-radius: 4px;
+    transition: all linear 160ms;
+    outline: none;
+}
+
+
+    .formLogin input:focus {
+        border: 1px solid ;
+    }
+
+.formLogin label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.formLogin a {
+    display: inline-block;
+    margin-bottom: 20px;
+    font-size: 13px;
+    color: #555;
+    transition: all linear 160ms;
+}
+
+    .formLogin a:hover {
+        color: #f72585;
+    }
+
+
+
+    .btn:hover {
+        transform: scale(1.05);
+    }

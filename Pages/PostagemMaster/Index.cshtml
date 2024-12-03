@@ -1,0 +1,61 @@
+﻿@page
+@using Microsoft.AspNetCore.Authorization;
+@model ProjetoLuzaBlog.Pages.PostagemMaster.IndexModel
+@attribute [Authorize]
+@{
+    ViewData["Title"] = "Minhas Postagens";
+}
+
+<h4>Minhas postagens</h4>
+
+<p>
+    <a asp-page="Create">Nova Postagem</a>
+    @if (User.Identity.IsAuthenticated)
+    {
+    <p>Bem-vindo, @User.Identity.Name!</p>
+    }
+    else
+    {
+    <p>Você não está logado.</p>
+    }
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Conteúdo
+            </th>
+            <th>
+                Data Cadastro
+            </th>
+            <th>
+                Data Atualização
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Postagem != null)
+        {
+            @foreach (var item in Model.Postagem)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DesConteudo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DatCadastro)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DatAtualizacao)
+                    </td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@item.CodPostagem">Editar</a> |
+                        <a asp-page="./Details" asp-route-id="@item.CodPostagem">Detalhes</a> |
+                        <a asp-page="./Delete" asp-route-id="@item.CodPostagem">Apagar</a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
