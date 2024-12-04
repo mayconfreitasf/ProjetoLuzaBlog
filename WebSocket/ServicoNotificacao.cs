@@ -19,7 +19,7 @@ namespace ProjetoLuzaBlog.WebSocket
         public async Task EnviarNotificacao(Postagem postagem, string nome)
         {
             // Enviar notificação para todos os WebSockets conectados (responsabilidade única de notificação)
-            var mensagem = $"{postagem.UserId} publicou: '{postagem.DesConteudo}' ";
+            var mensagem = $"{nome} publicou: '{postagem.DesConteudo}' ";
             await _webSocketServico.EnviarMsgParaTodos(mensagem);  // Delegando a responsabilidade de enviar a mensagem
         }
     }
